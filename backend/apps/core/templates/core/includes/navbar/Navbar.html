@@ -1,0 +1,14 @@
+<nav>
+    <ul class="flex gap-5 m-0 p-0 list-none">
+        <li><a href="{% url 'core:home' %}"
+                class="text-white hover:underline transition-colors hover:text-gray-300 font-medium">Inicio</a></li>
+        <li><a href="{% url 'core:clientes_list' %}"
+                class="text-white hover:underline transition-colors hover:text-gray-300 font-medium">Clientes</a>
+        </li>
+        <li><a href="{% url 'core:ventas_list' %}"
+                class="text-white hover:underline transition-colors hover:text-gray-300 font-medium">Ventas</a></li>
+        <li><a href="{% url 'core:productos_list' %}"
+                class="text-white hover:underline transition-colors hover:text-gray-300 font-medium">Productos</a>
+        </li>
+    </ul>
+</nav>
