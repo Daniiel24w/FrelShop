@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Gestión{% endblock %}</title>
+
+    <!-- CNDS -->
+    <!-- TailwindCss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <!-- STYLES -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% include 'core/includes/header/Header.html' %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'core/includes/footer/Footer.html' %}
+    <!-- SCRIPTS -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
