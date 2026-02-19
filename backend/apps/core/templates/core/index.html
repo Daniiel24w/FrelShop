@@ -1,25 +1,132 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Inicio - {{ block.super }}{% endblock %}
+{% block title %}Dashboard - {{ block.super }}{% endblock %}
 
 {% block content %}
-<div class="bg-white p-6 rounded-lg shadow-md mb-8">
-    <h1 class="text-2xl font-bold text-gray-800 mb-2">{{ titulo }}</h1>
-    <p class="text-gray-600 mb-6">{{ mensaje }}</p>
+<div class="space-y-8">
+    
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Panel de Control</h1>
+            <p class="text-gray-500 text-sm">Bienvenido de nuevo, {{ user.username }}. Aquí tienes el resumen de hoy.</p>
+        </div>
+        <div class="flex gap-3">
+            <button class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="bi bi-download"></i> Exportar
+            </button>
+            <button class="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-blue-700 transition-colors shadow-sm">
+                <i class="bi bi-plus-lg"></i> Nueva Venta
+            </button>
+        </div>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold text-blue-800">Clientes</h3>
-            <p class="text-sm text-blue-600 mb-3">Gestión de cartera de clientes.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-blue-50 p-2 rounded-lg">
+                    <i class="bi bi-currency-dollar text-blue-600 text-xl"></i>
+                </div>
+                <span class="text-green-500 text-xs font-medium bg-green-50 px-2 py-1 rounded-full">+12.5%</span>
+            </div>
+            <h3 class="text-gray-400 text-sm font-medium">Ventas del Día</h3>
+            <p class="text-2xl font-bold text-gray-800">$450,230</p>
         </div>
-        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold text-green-800">Ventas</h3>
-            <p class="text-sm text-green-600 mb-3">Registro y control de ventas.</p>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-purple-50 p-2 rounded-lg">
+                    <i class="bi bi-people-fill text-purple-600 text-xl"></i>
+                </div>
+                <span class="text-green-500 text-xs font-medium bg-green-50 px-2 py-1 rounded-full">+3</span>
+            </div>
+            <h3 class="text-gray-400 text-sm font-medium">Clientes Nuevos</h3>
+            <p class="text-2xl font-bold text-gray-800">24</p>
         </div>
-        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold text-orange-800">Productos</h3>
-            <p class="text-sm text-orange-600 mb-3">Inventario de productos.</p>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-orange-50 p-2 rounded-lg">
+                    <i class="bi bi-truck text-orange-600 text-xl"></i>
+                </div>
+                <span class="text-orange-500 text-xs font-medium bg-orange-50 px-2 py-1 rounded-full">En espera</span>
+            </div>
+            <h3 class="text-gray-400 text-sm font-medium">Pedidos Pendientes</h3>
+            <p class="text-2xl font-bold text-gray-800">8</p>
         </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-red-50 p-2 rounded-lg">
+                    <i class="bi bi-box-seam-fill text-red-600 text-xl"></i>
+                </div>
+                <span class="text-red-500 text-xs font-medium bg-red-50 px-2 py-1 rounded-full">Crítico</span>
+            </div>
+            <h3 class="text-gray-400 text-sm font-medium">Productos sin Stock</h3>
+            <p class="text-2xl font-bold text-gray-800">15</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <div class="lg:col-span-2 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="font-bold text-gray-800">Rendimiento Semanal</h3>
+                <select class="text-xs border-gray-200 rounded-lg focus:ring-blue-500">
+                    <option>Últimos 7 días</option>
+                    <option>Último mes</option>
+                </select>
+            </div>
+            <div class="flex items-end justify-between h-48 gap-2 pt-4">
+                <div class="bg-blue-100 w-full rounded-t-lg hover:bg-blue-600 transition-colors cursor-pointer" style="height: 40%"></div>
+                <div class="bg-blue-100 w-full rounded-t-lg hover:bg-blue-600 transition-colors cursor-pointer" style="height: 60%"></div>
+                <div class="bg-blue-100 w-full rounded-t-lg hover:bg-blue-600 transition-colors cursor-pointer" style="height: 35%"></div>
+                <div class="bg-blue-600 w-full rounded-t-lg cursor-pointer" style="height: 85%"></div>
+                <div class="bg-blue-100 w-full rounded-t-lg hover:bg-blue-600 transition-colors cursor-pointer" style="height: 50%"></div>
+                <div class="bg-blue-100 w-full rounded-t-lg hover:bg-blue-600 transition-colors cursor-pointer" style="height: 75%"></div>
+                <div class="bg-blue-100 w-full rounded-t-lg hover:bg-blue-600 transition-colors cursor-pointer" style="height: 45%"></div>
+            </div>
+            <div class="flex justify-between mt-4 text-[10px] text-gray-400 uppercase font-bold tracking-widest">
+                <span>Lun</span><span>Mar</span><span>Mie</span><span>Jue</span><span>Vie</span><span>Sab</span><span>Dom</span>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-gray-800 mb-6">Últimas Ventas</h3>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b border-gray-50 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center font-bold text-gray-500">JD</div>
+                        <div>
+                            <p class="text-sm font-semibold text-gray-800">Juan Diaz</p>
+                            <p class="text-xs text-gray-400">Hace 5 min</p>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold text-gray-800">+$12,500</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-gray-50 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center font-bold text-gray-500">MS</div>
+                        <div>
+                            <p class="text-sm font-semibold text-gray-800">Maria Sosa</p>
+                            <p class="text-xs text-gray-400">Hace 12 min</p>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold text-gray-800">+$8,900</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center font-bold text-gray-500">RP</div>
+                        <div>
+                            <p class="text-sm font-semibold text-gray-800">Roberto Perez</p>
+                            <p class="text-xs text-gray-400">Hace 1 hora</p>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold text-gray-800">+$25,000</span>
+                </div>
+            </div>
+            <button class="w-full mt-6 text-sm text-blue-600 font-medium hover:underline">Ver todo el historial</button>
+        </div>
+
     </div>
 </div>
 {% endblock %}

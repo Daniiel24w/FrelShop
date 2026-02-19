@@ -1,0 +1,118 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Historial de Ventas - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Historial de Ventas</h1>
+            <p class="text-gray-500 text-sm">Consulta y gestiona todos los comprobantes emitidos.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="bi bi-funnel"></i> Filtros Avanzados
+            </button>
+            <button class="flex items-center gap-2 bg-green-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-green-700 transition-colors shadow-sm">
+                <i class="bi bi-file-earmark-excel"></i> Exportar
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+        <div class="md:col-span-2 relative">
+            <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input type="text" placeholder="Buscar por cliente o N° de ticket..." 
+                class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all">
+        </div>
+        <div>
+            <input type="date" class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm text-gray-500">
+        </div>
+        <div>
+            <select class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm text-gray-500">
+                <option>Todos los estados</option>
+                <option>Completado</option>
+                <option>Anulado</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <tr>
+                        <th class="px-6 py-4">N° Ticket</th>
+                        <th class="px-6 py-4">Fecha / Hora</th>
+                        <th class="px-6 py-4">Cliente</th>
+                        <th class="px-6 py-4">Medio de Pago</th>
+                        <th class="px-6 py-4 text-right">Total</th>
+                        <th class="px-6 py-4 text-center">Estado</th>
+                        <th class="px-6 py-4 text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    <tr class="hover:bg-blue-50/30 transition-colors group">
+                        <td class="px-6 py-4 text-sm font-mono font-bold text-blue-600">#0001-000045</td>
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-medium text-gray-700">18 Feb, 2026</p>
+                            <p class="text-[11px] text-gray-400 font-mono">15:24:02</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Juan Perez</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 bg-gray-100 w-fit px-2 py-1 rounded">
+                                <i class="bi bi-cash text-green-600"></i> Efectivo
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-right text-sm font-black text-gray-800">$ 15,400.00</td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Completado</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-3">
+                                <button title="Ver Detalle" class="text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-eye"></i></button>
+                                <button title="Imprimir Ticket" class="text-gray-400 hover:text-gray-600 transition-colors"><i class="bi bi-printer"></i></button>
+                                <button title="Anular" class="text-gray-400 hover:text-red-600 transition-colors"><i class="bi bi-x-circle"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-blue-50/30 transition-colors group">
+                        <td class="px-6 py-4 text-sm font-mono font-bold text-blue-600">#0001-000044</td>
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-medium text-gray-700">18 Feb, 2026</p>
+                            <p class="text-[11px] text-gray-400 font-mono">14:10:15</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Consumidor Final</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 bg-gray-100 w-fit px-2 py-1 rounded">
+                                <i class="bi bi-credit-card text-purple-600"></i> Tarjeta
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-right text-sm font-black text-gray-400 line-through">$ 2,500.00</td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="bg-red-100 text-red-700 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Anulado</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-3">
+                                <button class="text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-eye"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-xs text-gray-500">Mostrando 1 a 10 de 154 ventas</span>
+            <div class="flex gap-1">
+                <button class="px-3 py-1 border border-gray-200 rounded bg-white text-xs hover:bg-gray-50 disabled:opacity-50">Anterior</button>
+                <button class="px-3 py-1 border border-blue-600 rounded bg-blue-600 text-white text-xs">1</button>
+                <button class="px-3 py-1 border border-gray-200 rounded bg-white text-xs hover:bg-gray-50">2</button>
+                <button class="px-3 py-1 border border-gray-200 rounded bg-white text-xs hover:bg-gray-50">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

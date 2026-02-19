@@ -1,0 +1,151 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Productos - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Inventario de Productos</h1>
+            <p class="text-gray-500 text-sm">Administra el stock, precios y categorías de tu catálogo.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="bi bi-printer"></i> Imprimir Etiquetas
+            </button>
+            <button class="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-blue-700 transition-colors shadow-sm">
+                <i class="bi bi-plus-lg"></i> Agregar Producto
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div class="md:col-span-5 relative">
+            <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input type="text" placeholder="Buscar por nombre, código o marca..." 
+                class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all">
+        </div>
+        <div class="md:col-span-3">
+            <select class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm text-gray-500">
+                <option>Todas las Categorías</option>
+                <option>Bebidas</option>
+                <option>Snacks</option>
+                <option>Almacén</option>
+            </select>
+        </div>
+        <div class="md:col-span-2">
+            <select class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm text-gray-500">
+                <option>Estado Stock</option>
+                <option>Crítico</option>
+                <option>Bajo</option>
+                <option>Suficiente</option>
+            </select>
+        </div>
+        <div class="md:col-span-2">
+            <button class="w-full h-full bg-gray-100 text-gray-600 font-bold text-xs rounded-lg hover:bg-gray-200 transition-colors uppercase tracking-tighter">
+                Limpiar Filtros
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <tr>
+                        <th class="px-6 py-4">Imagen</th>
+                        <th class="px-6 py-4">Producto / SKU</th>
+                        <th class="px-6 py-4">Categoría</th>
+                        <th class="px-6 py-4">Precio Venta</th>
+                        <th class="px-6 py-4">Stock</th>
+                        <th class="px-6 py-4">Estado</th>
+                        <th class="px-6 py-4 text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="h-10 w-10 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-bold text-gray-800 tracking-tight">Coca Cola 1.5L</p>
+                            <p class="text-[10px] text-gray-400 font-mono italic">SKU: BEB-00124</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Bebidas</td>
+                        <td class="px-6 py-4 text-sm font-black text-gray-800">$ 2,500.00</td>
+                        <td class="px-6 py-4 text-sm font-bold text-gray-800">2 u.</td>
+                        <td class="px-6 py-4">
+                            <span class="bg-red-100 text-red-600 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Crítico</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                                <button class="p-2 text-gray-400 hover:text-red-600 transition-colors"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="h-10 w-10 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-bold text-gray-800 tracking-tight">Papas Lay's Clásicas 150g</p>
+                            <p class="text-[10px] text-gray-400 font-mono italic">SKU: SNK-00562</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Snacks</td>
+                        <td class="px-6 py-4 text-sm font-black text-gray-800">$ 1,800.00</td>
+                        <td class="px-6 py-4 text-sm font-bold text-gray-800">45 u.</td>
+                        <td class="px-6 py-4">
+                            <span class="bg-green-100 text-green-600 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Suficiente</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                                <button class="p-2 text-gray-400 hover:text-red-600 transition-colors"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="h-10 w-10 bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-bold text-gray-800 tracking-tight">Galletitas Oreo 118g</p>
+                            <p class="text-[10px] text-gray-400 font-mono italic">SKU: ALM-00877</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Almacén</td>
+                        <td class="px-6 py-4 text-sm font-black text-gray-800">$ 1,200.00</td>
+                        <td class="px-6 py-4 text-sm font-bold text-gray-800">8 u.</td>
+                        <td class="px-6 py-4">
+                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Bajo</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                                <button class="p-2 text-gray-400 hover:text-red-600 transition-colors"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Total: 154 Productos registrados</span>
+            <div class="flex gap-2">
+                <button class="px-3 py-1.5 border border-gray-200 rounded-lg bg-white text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">Anterior</button>
+                <button class="px-3 py-1.5 border border-gray-200 rounded-lg bg-white text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

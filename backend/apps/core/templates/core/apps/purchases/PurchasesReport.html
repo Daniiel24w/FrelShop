@@ -1,0 +1,129 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Reporte de Compras - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Análisis de Compras</h1>
+            <p class="text-gray-500 text-sm">Control de egresos, costos y relación con proveedores.</p>
+        </div>
+        <div class="flex items-center gap-2 bg-white p-1 rounded-xl border border-gray-100 shadow-sm">
+            <input type="month" class="px-3 py-2 text-xs font-bold text-gray-600 border-none outline-none focus:ring-0 bg-transparent" value="2026-02">
+            <button class="bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                <i class="bi bi-filter"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest italic">Total Compras (Mes)</p>
+            <p class="text-3xl font-black text-gray-800">$ 842,500</p>
+            <p class="text-xs text-indigo-500 font-bold mt-2 flex items-center gap-1">
+                <i class="bi bi-cart-dash"></i> 12 Órdenes generadas
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest italic">Costo Prom. Orden</p>
+            <p class="text-3xl font-black text-gray-800">$ 70,200</p>
+            <p class="text-xs text-gray-400 mt-2">Variación: +2% vs mes ant.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm border-l-4 border-l-orange-400">
+            <p class="text-xs font-bold text-orange-600 uppercase mb-1 tracking-widest italic">Cuentas por Pagar</p>
+            <p class="text-3xl font-black text-gray-800">$ 125,000</p>
+            <p class="text-xs text-orange-500 font-bold mt-2 flex items-center gap-1">
+                <i class="bi bi-clock-history"></i> 3 facturas pendientes
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest italic">Mayor Proveedor</p>
+            <p class="text-lg font-black text-indigo-600 truncate uppercase">Distribuidora Central</p>
+            <p class="text-xs text-gray-400 mt-2">45% de las compras totales</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                    <i class="bi bi-graph-down text-indigo-600"></i> Flujo de Egresos Mensual
+                </h3>
+                <span class="text-[10px] bg-indigo-50 text-indigo-600 px-2 py-1 rounded font-bold uppercase">Últimos 6 Meses</span>
+            </div>
+            <div class="flex-grow flex items-end justify-between gap-4 h-64 pt-4 px-2">
+                <div class="w-full flex flex-col items-center gap-2">
+                    <div class="bg-indigo-100 w-full rounded-t-lg" style="height: 60%"></div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase">Sep</span>
+                </div>
+                <div class="w-full flex flex-col items-center gap-2">
+                    <div class="bg-indigo-100 w-full rounded-t-lg" style="height: 45%"></div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase">Oct</span>
+                </div>
+                <div class="w-full flex flex-col items-center gap-2">
+                    <div class="bg-indigo-200 w-full rounded-t-lg" style="height: 85%"></div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase">Nov</span>
+                </div>
+                <div class="w-full flex flex-col items-center gap-2">
+                    <div class="bg-indigo-100 w-full rounded-t-lg" style="height: 30%"></div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase">Dic</span>
+                </div>
+                <div class="w-full flex flex-col items-center gap-2">
+                    <div class="bg-indigo-100 w-full rounded-t-lg" style="height: 55%"></div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase">Ene</span>
+                </div>
+                <div class="w-full flex flex-col items-center gap-2">
+                    <div class="bg-indigo-600 w-full rounded-t-lg shadow-lg" style="height: 75%"></div>
+                    <span class="text-[10px] text-indigo-600 font-bold uppercase">Feb</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <i class="bi bi-truck text-indigo-500"></i> Ranking Proveedores
+            </h3>
+            <div class="space-y-5">
+                <div class="relative pt-1">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-gray-700">Distribuidora Central</span>
+                        <span class="text-xs font-bold text-indigo-600">$380k</span>
+                    </div>
+                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-50">
+                        <div style="width:65%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"></div>
+                    </div>
+                </div>
+                <div class="relative pt-1">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-gray-700">Arcor Oficial</span>
+                        <span class="text-xs font-bold text-indigo-600">$210k</span>
+                    </div>
+                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-50">
+                        <div style="width:40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-400"></div>
+                    </div>
+                </div>
+                <div class="relative pt-1">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-gray-700">Bebidas del Norte</span>
+                        <span class="text-xs font-bold text-indigo-600">$150k</span>
+                    </div>
+                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-50">
+                        <div style="width:25%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-300"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                <p class="text-[10px] text-gray-500 text-center leading-relaxed">
+                    Los datos reflejan órdenes de compra <br><strong>confirmadas y recibidas</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

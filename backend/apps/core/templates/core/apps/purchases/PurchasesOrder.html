@@ -1,0 +1,132 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Nuevo Pedido de Compra - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="flex flex-col lg:flex-row gap-6 h-[calc(100vh-120px)]">
+
+    <div class="flex-grow flex flex-col gap-6 overflow-hidden">
+        
+        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Proveedor Destino</label>
+                <select class="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option>Seleccionar Proveedor...</option>
+                    <option selected>Distribuidora Central S.A.</option>
+                    <option>Bebidas del Norte S.R.L.</option>
+                    <option>Arcor Oficial</option>
+                </select>
+            </div>
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Fecha Estimada Entrega</label>
+                <input type="date" class="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 text-gray-500">
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm flex-grow overflow-hidden flex flex-col">
+            <div class="p-4 border-b border-gray-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="relative flex-grow max-w-md">
+                    <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" placeholder="Buscar producto para añadir al pedido..." 
+                        class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <span class="text-[10px] font-bold text-orange-500 bg-orange-50 px-2 py-1 rounded-full">Sugerencia: Reponer 12 productos con stock bajo</span>
+            </div>
+            
+            <div class="overflow-y-auto flex-grow p-4">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 border border-gray-50 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 bg-indigo-50 rounded flex items-center justify-center text-indigo-400 text-lg">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-gray-800">Cerveza Quilmes 1L</p>
+                                <p class="text-[10px] text-gray-400">Stock Actual: 5 u. | Sugerido: +24 u.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-xs font-bold text-gray-400">Costo Unit: $1,200</span>
+                            <button class="bg-indigo-600 text-white p-1.5 rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 border border-gray-50 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 bg-indigo-50 rounded flex items-center justify-center text-indigo-400 text-lg">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-gray-800">Aceite Girasol 900ml</p>
+                                <p class="text-[10px] text-gray-400">Stock Actual: 2 u. | Sugerido: +12 u.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-xs font-bold text-gray-400">Costo Unit: $1,850</span>
+                            <button class="bg-indigo-600 text-white p-1.5 rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-[450px] flex flex-col gap-6">
+        
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm flex-grow flex flex-col overflow-hidden">
+            <div class="p-4 border-b border-gray-50 bg-indigo-600 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="bi bi-clipboard-check"></i>
+                    <h3 class="font-bold">Resumen de Orden</h3>
+                </div>
+                <span class="text-xs font-mono">OP-2026-001</span>
+            </div>
+            
+            <div class="flex-grow overflow-y-auto p-4 space-y-4">
+                <div class="flex flex-col gap-3 border-b border-gray-50 pb-4">
+                    <div class="flex justify-between items-start">
+                        <p class="text-sm font-bold text-gray-800">Cerveza Quilmes 1L</p>
+                        <button class="text-red-400 text-xs hover:text-red-600 transition-colors"><i class="bi bi-trash"></i></button>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="px-2 py-1 bg-gray-50 text-gray-600 text-xs">-</button>
+                            <input type="number" value="24" class="w-12 text-center text-xs font-bold border-none outline-none">
+                            <button class="px-2 py-1 bg-gray-50 text-gray-600 text-xs">+</button>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs text-gray-400">Costo: $1,200.00</p>
+                            <p class="text-sm font-black text-gray-800">$ 28,800.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-gray-50 border-t border-gray-100">
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-500 text-sm">
+                        <span>Cant. Productos</span>
+                        <span class="font-bold text-gray-700">24 u.</span>
+                    </div>
+                    <div class="flex justify-between text-gray-500 text-sm">
+                        <span>Impuestos (IVA)</span>
+                        <span class="font-bold text-gray-700">$ 6,048.00</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-3 border-t border-gray-200">
+                        <span class="text-indigo-600 font-bold uppercase tracking-wider text-xs">Inversión Total</span>
+                        <span class="text-3xl font-black text-indigo-600">$ 34,848.00</span>
+                    </div>
+                </div>
+
+                <button class="w-full bg-indigo-600 hover:bg-indigo-700 py-4 rounded-xl font-bold text-white shadow-lg shadow-indigo-100 transition-all flex items-center justify-center gap-3">
+                    <i class="bi bi-send-fill"></i>
+                    GENERAR ORDEN DE COMPRA
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

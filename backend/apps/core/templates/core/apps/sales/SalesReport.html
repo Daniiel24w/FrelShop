@@ -1,0 +1,126 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Reporte de Ventas - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Reportes y Estadísticas</h1>
+            <p class="text-gray-500 text-sm">Análisis detallado del rendimiento de FrelShop.</p>
+        </div>
+        <div class="flex items-center gap-2 bg-white p-1 rounded-xl border border-gray-100 shadow-sm">
+            <button class="px-4 py-2 text-xs font-bold bg-blue-600 text-white rounded-lg shadow-md">Este Mes</button>
+            <button class="px-4 py-2 text-xs font-bold text-gray-500 hover:bg-gray-50 rounded-lg">Últimos 90 días</button>
+            <button class="px-4 py-2 text-xs font-bold text-gray-500 hover:bg-gray-50 rounded-lg">Personalizado</button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
+            <div class="absolute right-[-10px] top-[-10px] text-blue-50 opacity-10 group-hover:scale-110 transition-transform">
+                <i class="bi bi-graph-up-arrow text-8xl"></i>
+            </div>
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Ingresos Totales</p>
+            <p class="text-3xl font-black text-gray-800">$ 1,245,000</p>
+            <p class="text-xs text-green-500 font-bold mt-2 flex items-center gap-1">
+                <i class="bi bi-caret-up-fill"></i> 14.2% vs mes anterior
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Ticket Promedio</p>
+            <p class="text-3xl font-black text-gray-800">$ 8,450</p>
+            <p class="text-xs text-blue-500 font-bold mt-2 flex items-center gap-1">
+                <i class="bi bi-info-circle"></i> Basado en 147 ventas
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Margen Bruto</p>
+            <p class="text-3xl font-black text-green-600">32.5%</p>
+            <div class="w-full bg-gray-100 h-1.5 rounded-full mt-3">
+                <div class="bg-green-500 h-full rounded-full" style="width: 32%"></div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Ventas Anuladas</p>
+            <p class="text-3xl font-black text-red-500">4</p>
+            <p class="text-xs text-gray-400 font-bold mt-2">Pérdida est: $12,400</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+            <h3 class="font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <i class="bi bi-calendar-check text-blue-600"></i> Tendencia de Ventas
+            </h3>
+            <div class="flex-grow flex items-end justify-between gap-2 h-64 pt-4 border-l border-b border-gray-50 px-2">
+                <div class="bg-blue-100 w-full rounded-t-md relative group">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] px-2 py-1 rounded hidden group-hover:block">$45k</div>
+                    <div class="bg-blue-500 w-full rounded-t-md transition-all" style="height: 40%"></div>
+                </div>
+                <div class="bg-blue-100 w-full rounded-t-md" style="height: 65%"><div class="bg-blue-500 w-full rounded-t-md" style="height: 100%"></div></div>
+                <div class="bg-blue-100 w-full rounded-t-md" style="height: 35%"><div class="bg-blue-500 w-full rounded-t-md" style="height: 100%"></div></div>
+                <div class="bg-blue-100 w-full rounded-t-md" style="height: 80%"><div class="bg-blue-500 w-full rounded-t-md" style="height: 100%"></div></div>
+                <div class="bg-blue-100 w-full rounded-t-md" style="height: 55%"><div class="bg-blue-500 w-full rounded-t-md" style="height: 100%"></div></div>
+            </div>
+            <div class="flex justify-between mt-4 text-[10px] text-gray-400 font-bold px-2 uppercase tracking-tighter">
+                <span>Semana 1</span><span>Semana 2</span><span>Semana 3</span><span>Semana 4</span><span>Semana 5</span>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <i class="bi bi-star-fill text-yellow-500"></i> Más Vendidos
+            </h3>
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="text-xs font-black text-gray-300 w-4">01</div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Coca Cola 1.5L</p>
+                            <p class="text-[10px] text-gray-400 uppercase">Bebidas</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-gray-800">458 u.</p>
+                        <p class="text-[10px] text-green-500 font-bold">$120,400</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="text-xs font-black text-gray-300 w-4">02</div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Papas Lay's 150g</p>
+                            <p class="text-[10px] text-gray-400 uppercase">Snacks</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-gray-800">212 u.</p>
+                        <p class="text-[10px] text-green-500 font-bold">$85,200</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="text-xs font-black text-gray-300 w-4">03</div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-800">Cig. Lucky Strike</p>
+                            <p class="text-[10px] text-gray-400 uppercase">Tabaquería</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-gray-800">189 u.</p>
+                        <p class="text-[10px] text-green-500 font-bold">$78,150</p>
+                    </div>
+                </div>
+            </div>
+            <button class="w-full mt-8 py-2 bg-gray-50 text-gray-500 text-xs font-bold rounded-lg hover:bg-gray-100 transition-colors">VER LISTA COMPLETA</button>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Reporte de Inventario - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Análisis de Inventario</h1>
+            <p class="text-gray-500 text-sm">Valorización de activos y rendimiento de productos.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 shadow-sm transition-colors">
+                <i class="bi bi-file-earmark-pdf"></i> PDF
+            </button>
+            <button class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-indigo-700 shadow-sm transition-colors">
+                <i class="bi bi-arrow-repeat"></i> Actualizar Valorización
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm border-b-4 border-b-blue-500">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Inversión en Stock (Costo)</p>
+            <p class="text-3xl font-black text-gray-800">$ 2,840,000</p>
+            <p class="text-xs text-gray-400 mt-2 italic">Valor total de compra de la mercadería.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm border-b-4 border-b-green-500">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Valor de Venta Estimado</p>
+            <p class="text-3xl font-black text-gray-800">$ 4,150,000</p>
+            <p class="text-xs text-green-600 font-bold mt-2">Ganancia Potencial: +46%</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm border-b-4 border-b-red-500">
+            <p class="text-xs font-bold text-gray-400 uppercase mb-1 tracking-widest">Productos en Alerta</p>
+            <p class="text-3xl font-black text-red-600">28</p>
+            <p class="text-xs text-red-500 font-bold mt-2 flex items-center gap-1">
+                <i class="bi bi-exclamation-triangle-fill"></i> Requieren reposición inmediata
+            </p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <i class="bi bi-pie-chart-fill text-indigo-500"></i> Stock por Categoría
+            </h3>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-xs font-bold mb-1">
+                        <span class="text-gray-600">Almacén</span>
+                        <span class="text-gray-400">45%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-indigo-500 h-full" style="width: 45%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs font-bold mb-1">
+                        <span class="text-gray-600">Bebidas</span>
+                        <span class="text-gray-400">30%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full" style="width: 30%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs font-bold mb-1">
+                        <span class="text-gray-600">Snacks</span>
+                        <span class="text-gray-400">25%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-500 h-full" style="width: 25%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <h3 class="font-bold text-gray-800 mb-6 flex items-center gap-2 text-red-600">
+                <i class="bi bi-hourglass-bottom"></i> Sin Ventas (Últimos 30 días)
+            </h3>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                    <div class="flex flex-col">
+                        <span class="text-sm font-bold text-gray-800">Aceite de Oliva 500ml</span>
+                        <span class="text-[10px] text-gray-400">Costo Inmovilizado: $15,400</span>
+                    </div>
+                    <span class="text-xs bg-white px-2 py-1 rounded border border-red-200 text-red-600 font-bold">12 u.</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div class="flex flex-col">
+                        <span class="text-sm font-bold text-gray-800">Shampoo Anticaspa</span>
+                        <span class="text-[10px] text-gray-400">Costo Inmovilizado: $8,200</span>
+                    </div>
+                    <span class="text-xs bg-white px-2 py-1 rounded border border-gray-200 text-gray-500 font-bold">5 u.</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div class="flex flex-col">
+                        <span class="text-sm font-bold text-gray-800">Vino Malbec Premium</span>
+                        <span class="text-[10px] text-gray-400">Costo Inmovilizado: $45,000</span>
+                    </div>
+                    <span class="text-xs bg-white px-2 py-1 rounded border border-gray-200 text-gray-500 font-bold">8 u.</span>
+                </div>
+            </div>
+            <p class="text-center mt-6 text-xs text-blue-600 font-bold cursor-pointer hover:underline uppercase tracking-tighter">Generar liquidación de stock</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}  
