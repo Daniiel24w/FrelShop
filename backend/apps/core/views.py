@@ -9,12 +9,57 @@ from apps.sales.models import Venta, DetalleVenta
 from apps.suppliers.models import Proveedor
 from apps.users.models import Usuario
 
+
+# VISTAS
+    # CORE
 def home(request):
-    """
-    Vista principal que renderiza el dashboard o home.
-    """
-    context = {
-        'titulo': 'Dashboard Principal',
-        'mensaje': 'Bienvenido al Sistema de Gestión Centralizado'
-    }
-    return render(request, 'core/index.html', context)
+    return render(request, 'core/index.html')
+
+    # CAJA
+def boxOpening(request):
+    return render(request, 'core/apps/boxes/BoxOpening.html')
+
+def boxClosing(request):
+    return render(request, 'core/apps/boxes/BoxClosing.html')
+
+def boxStatus(request):
+    return render(request, 'core/apps/boxes/BoxStatus.html')
+
+    # CLIENTES
+def customer(request):
+    return render(request, 'core/apps/customers/Customers.html')
+
+    # PROVEEDORES
+def supplier(request):
+    return render(request, 'core/apps/suppliers/Suppliers.html')
+
+    # COMPRAS
+def purchaseOrder(request):
+    return render(request, 'core/apps/purchases/PurchasesOrder.html')
+
+def purchaseReport(request):
+    return render(request, 'core/apps/purchases/PurchasesReport.html')
+
+    # VENTAS
+def salesNew(request):
+    return render(request, 'core/apps/sales/SalesNew.html')
+
+def salesHistory(request):
+    return render(request, 'core/apps/sales/SalesHistory.html')
+
+def salesReport(request):
+    return render(request, 'core/apps/sales/SalesReport.html')
+    
+    # USUARIO
+def userProfile(request):
+    return render(request, 'core/apps/users/UserProfile.html')
+
+def userProfileEdit(request):
+    return render(request, 'core/apps/users/UserProfileEdit.html')
+
+    # PRODUCTOS
+def product(request):
+    return render(request, 'core/apps/products/Products.html')
+
+def productReport(request):
+    return render(request, 'core/apps/products/ProductsReport.html')

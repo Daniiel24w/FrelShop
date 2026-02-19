@@ -1,0 +1,133 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Clientes - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Base de Clientes</h1>
+            <p class="text-gray-500 text-sm">Gestiona la información y el historial de crédito de tus clientes.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="bi bi-cloud-arrow-up"></i> Exportar
+            </button>
+            <button class="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-blue-700 transition-colors shadow-sm">
+                <i class="bi bi-person-plus-fill"></i> Nuevo Cliente
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
+            <div class="bg-blue-50 p-3 rounded-full">
+                <i class="bi bi-people text-blue-600 text-xl"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-gray-400 uppercase">Total Registrados</p>
+                <p class="text-2xl font-black text-gray-800">1,254</p>
+            </div>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
+            <div class="bg-green-50 p-3 rounded-full">
+                <i class="bi bi-award text-green-600 text-xl"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-gray-400 uppercase">Clientes VIP</p>
+                <p class="text-2xl font-black text-gray-800">86</p>
+            </div>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
+            <div class="bg-purple-50 p-3 rounded-full">
+                <i class="bi bi-wallet2 text-purple-600 text-xl"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-gray-400 uppercase">Crédito Activo</p>
+                <p class="text-2xl font-black text-gray-800">$ 45,800</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="p-4 border-b border-gray-50 bg-gray-50/30">
+            <div class="relative max-w-md">
+                <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" placeholder="Buscar por nombre, DNI o teléfono..." 
+                    class="w-full pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all">
+            </div>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <tr>
+                        <th class="px-6 py-4">Nombre / Cliente</th>
+                        <th class="px-6 py-4">DNI / CUIT</th>
+                        <th class="px-6 py-4">Contacto</th>
+                        <th class="px-6 py-4">Última Compra</th>
+                        <th class="px-6 py-4 text-right">Saldo a Favor</th>
+                        <th class="px-6 py-4 text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-9 w-9 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xs">
+                                    JP
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-800 tracking-tight">Juan Perez</p>
+                                    <span class="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-bold">CLIENTE VIP</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-mono">20-33444555-9</td>
+                        <td class="px-6 py-4">
+                            <p class="text-xs text-gray-700">juan.perez@email.com</p>
+                            <p class="text-[11px] text-blue-500 font-medium">+54 387 455-6677</p>
+                        </td>
+                        <td class="px-6 py-4 text-xs text-gray-500">Hoy, 10:24 AM</td>
+                        <td class="px-6 py-4 text-right text-sm font-black text-gray-800">$ 0.00</td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button title="Ver Historial" class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-clock-history"></i></button>
+                                <button title="Editar" class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-9 w-9 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-xs">
+                                    MG
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-800 tracking-tight">Maria Garcia</p>
+                                    <span class="text-[10px] bg-purple-50 text-purple-600 px-1.5 py-0.5 rounded font-bold">MAYORISTA</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-mono">27-11222333-4</td>
+                        <td class="px-6 py-4">
+                            <p class="text-xs text-gray-700">maria.garcia@email.com</p>
+                            <p class="text-[11px] text-blue-500 font-medium">+54 387 512-3456</p>
+                        </td>
+                        <td class="px-6 py-4 text-xs text-gray-500">15 Feb, 2026</td>
+                        <td class="px-6 py-4 text-right text-sm font-black text-green-600">$ 12,500.00</td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-clock-history"></i></button>
+                                <button class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,172 @@
+<ul class="space-y-1.5 p-2">
+    
+    <li>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 hover:text-blue-600 transition-all duration-200 group">
+            <i class="bi bi-house-door-fill text-lg text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+            <span class="font-medium">Inicio</span>
+        </a>
+    </li>
+
+    <li>
+        <details class="group">
+            <summary class="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 group-open:bg-blue-50 group-open:text-blue-700 transition-all cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-cash-stack text-lg text-gray-400 group-hover:text-blue-600 group-open:text-blue-600"></i>
+                    <span class="font-medium">Caja</span>
+                </div>
+                <i class="bi bi-chevron-down text-[10px] transform transition-transform duration-300 group-open:rotate-180 text-gray-400"></i>
+            </summary>
+
+            <ul class="mt-1 ml-4 space-y-1 border-l-2 border-blue-100">
+                <li>
+                    <a href="{% url 'core:boxOpening' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-door-open-fill text-xs"></i>
+                        <span>Apertura Caja</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:boxClosing' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-door-closed-fill text-xs"></i>
+                        <span>Cierre Caja</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:boxStatus' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-pie-chart-fill text-xs"></i>
+                        <span>Estado Caja</span>
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
+
+    <li>
+        <details class="group">
+            <summary class="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 group-open:bg-blue-50 group-open:text-blue-700 transition-all cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-receipt text-lg text-gray-400 group-hover:text-blue-600 group-open:text-blue-600"></i>
+                    <span class="font-medium">Ventas</span>
+                </div>
+                <i class="bi bi-chevron-down text-[10px] transform transition-transform duration-300 group-open:rotate-180 text-gray-400"></i>
+            </summary>
+
+            <ul class="mt-1 ml-4 space-y-1 border-l-2 border-blue-100">
+                <li>
+                    <a href="{% url 'core:salesNew' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-plus-lg text-xs"></i>
+                        <span>Nueva Venta</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:salesHistory' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-clock-history text-xs"></i>
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:salesReport' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-bar-chart-line-fill text-xs"></i>
+                        <span>Reportes</span>
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
+
+    <li>
+        <details class="group">
+            <summary class="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 group-open:bg-blue-50 group-open:text-blue-700 transition-all cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-box-seam-fill text-lg text-gray-400 group-hover:text-blue-600 group-open:text-blue-600"></i>
+                    <span class="font-medium">Productos</span>
+                </div>
+                <i class="bi bi-chevron-down text-[10px] transform transition-transform duration-300 group-open:rotate-180 text-gray-400"></i>
+            </summary>
+
+            <ul class="mt-1 ml-4 space-y-1 border-l-2 border-blue-100">
+                <li>
+                    <a href="{% url 'core:product' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-tags-fill text-xs"></i>
+                        <span>Ver Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:productReport' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-file-earmark-bar-graph-fill text-xs"></i>
+                        <span>Reportes</span>
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
+
+    <li>
+        <details class="group">
+            <summary class="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 group-open:bg-blue-50 group-open:text-blue-700 transition-all cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-cart-fill text-lg text-gray-400 group-hover:text-blue-600 group-open:text-blue-600"></i>
+                    <span class="font-medium">Compras</span>
+                </div>
+                <i class="bi bi-chevron-down text-[10px] transform transition-transform duration-300 group-open:rotate-180 text-gray-400"></i>
+            </summary>
+
+            <ul class="mt-1 ml-4 space-y-1 border-l-2 border-blue-100">
+                <li>
+                    <a href="{% url 'core:purchaseOrder' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-truck text-xs"></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:purchaseReport' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-clipboard-data-fill text-xs"></i>
+                        <span>Reportes</span>
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
+
+    <li>
+        <details class="group">
+            <summary class="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 group-open:bg-blue-50 group-open:text-blue-700 transition-all cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-people-fill text-lg text-gray-400 group-hover:text-blue-600 group-open:text-blue-600"></i>
+                    <span class="font-medium">Clientes</span>
+                </div>
+                <i class="bi bi-chevron-down text-[10px] transform transition-transform duration-300 group-open:rotate-180 text-gray-400"></i>
+            </summary>
+
+            <ul class="mt-1 ml-4 space-y-1 border-l-2 border-blue-100">
+                <li>
+                    <a href="{% url 'core:customer' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-person-lines-fill text-xs"></i>
+                        <span>Ver Clientes</span>
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
+
+    <li>
+        <details class="group">
+            <summary class="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-slate-50 group-open:bg-blue-50 group-open:text-blue-700 transition-all cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-building-fill text-lg text-gray-400 group-hover:text-blue-600 group-open:text-blue-600"></i>
+                    <span class="font-medium">Proveedores</span>
+                </div>
+                <i class="bi bi-chevron-down text-[10px] transform transition-transform duration-300 group-open:rotate-180 text-gray-400"></i>
+            </summary>
+
+            <ul class="mt-1 ml-4 space-y-1 border-l-2 border-blue-100">
+                <li>
+                    <a href="{% url 'core:supplier' %}" class="flex items-center gap-3 px-6 py-2 text-sm text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-r-lg transition-colors">
+                        <i class="bi bi-box-arrow-in-right text-xs"></i>
+                        <span>Ver Proveedores</span>
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
+</ul>

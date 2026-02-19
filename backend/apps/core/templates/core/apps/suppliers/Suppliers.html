@@ -1,0 +1,109 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Proveedores - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Directorio de Proveedores</h1>
+            <p class="text-gray-500 text-sm">Administra tus contactos comerciales y condiciones de compra.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="bi bi-file-earmark-arrow-down"></i> Importar
+            </button>
+            <button class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-indigo-700 transition-colors shadow-sm">
+                <i class="bi bi-person-plus-fill"></i> Nuevo Proveedor
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="md:col-span-2 relative">
+            <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input type="text" placeholder="Buscar por razón social, CUIT o contacto..." 
+                class="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm shadow-sm transition-all">
+        </div>
+        <div class="bg-white px-4 py-2.5 border border-gray-100 rounded-xl shadow-sm flex items-center justify-between">
+            <span class="text-xs font-bold text-gray-400 uppercase">Total Activos</span>
+            <span class="text-lg font-black text-gray-800">24</span>
+        </div>
+        <div class="bg-orange-50 px-4 py-2.5 border border-orange-100 rounded-xl shadow-sm flex items-center justify-between">
+            <span class="text-xs font-bold text-orange-600 uppercase">Deuda Total</span>
+            <span class="text-lg font-black text-orange-700">$ 125,000</span>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-400 text-[11px] uppercase font-bold tracking-wider">
+                    <tr>
+                        <th class="px-6 py-4">Razón Social / CUIT</th>
+                        <th class="px-6 py-4">Contacto</th>
+                        <th class="px-6 py-4">Email / Teléfono</th>
+                        <th class="px-6 py-4">Rubro Principal</th>
+                        <th class="px-6 py-4 text-right">Saldo Cuenta</th>
+                        <th class="px-6 py-4 text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    <tr class="hover:bg-indigo-50/20 transition-colors">
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-bold text-gray-800 tracking-tight">Distribuidora Central S.A.</p>
+                            <p class="text-[10px] text-gray-400 font-mono italic">30-71458922-3</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Carlos Rodriguez</td>
+                        <td class="px-6 py-4">
+                            <p class="text-xs text-gray-700">ventas@districentral.com</p>
+                            <p class="text-xs text-blue-500">+54 11 4455-6677</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-[10px] font-bold uppercase">Almacén / Bebidas</span>
+                        </td>
+                        <td class="px-6 py-4 text-right text-sm font-black text-red-600">$ 85,000.00</td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button title="Ver Cuenta Corriente" class="p-2 text-gray-400 hover:text-indigo-600 transition-colors"><i class="bi bi-wallet2"></i></button>
+                                <button title="Editar" class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-indigo-50/20 transition-colors">
+                        <td class="px-6 py-4">
+                            <p class="text-sm font-bold text-gray-800 tracking-tight">Arcor Oficial</p>
+                            <p class="text-[10px] text-gray-400 font-mono italic">30-50001234-5</p>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-600 font-medium">Sucursal Salta</td>
+                        <td class="px-6 py-4">
+                            <p class="text-xs text-gray-700">pedidos@arcor.com.ar</p>
+                            <p class="text-xs text-blue-500">0800-444-2726</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded text-[10px] font-bold uppercase">Golosinas / Snacks</span>
+                        </td>
+                        <td class="px-6 py-4 text-right text-sm font-black text-green-600">$ 0.00</td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button class="p-2 text-gray-400 hover:text-indigo-600 transition-colors"><i class="bi bi-wallet2"></i></button>
+                                <button class="p-2 text-gray-400 hover:text-blue-600 transition-colors"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-xs text-gray-500">Mostrando 2 proveedores de 24</span>
+            <div class="flex gap-2">
+                <button class="px-3 py-1.5 border border-gray-200 rounded-lg bg-white text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">Anterior</button>
+                <button class="px-3 py-1.5 border border-gray-200 rounded-lg bg-white text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
